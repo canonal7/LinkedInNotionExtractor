@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generate Icons</title>
+  </head>
+  <body>
+    <canvas id="icon16" width="16" height="16"></canvas>
+    <canvas id="icon48" width="48" height="48"></canvas>
+    <canvas id="icon128" width="128" height="128"></canvas>
+
+    <script>
+      function drawIcon(canvasId, size) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+
+        // Background
+        ctx.fillStyle = '#0A66C2';
+        ctx.beginPath();
+        ctx.roundRect(0, 0, size, size, size * 0.15);
+        ctx.fill();
+
+        // Letter "N"
+        ctx.fillStyle = 'white';
+        const padding = size * 0.25;
+        const width = size - padding * 2;
+        const height = width * 1.2;
+
+        ctx.beginPath();
+        ctx.moveTo(padding, padding);
+        ctx.lineTo(padding, size - padding);
+        ctx.lineTo(padding + width * 0.4, size - padding - width * 0.4);
+        ctx.lineTo(padding + width * 0.4, padding + width * 0.4);
+        ctx.lineTo(size - padding, size - padding);
+        ctx.lineTo(size - padding, padding);
+        ctx.fill();
+
+        // Download link
+        const link = document.createElement('a');
+        link.download = `icon${size}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      }
+
+      // Generate all sizes
+      drawIcon('icon16', 16);
+      drawIcon('icon48', 48);
+      drawIcon('icon128', 128);
+    </script>
+  </body>
+</html>
