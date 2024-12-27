@@ -16,6 +16,14 @@
   <a href="#troubleshooting">Troubleshooting</a>
 </p>
 
+<p align="center">
+  Built with ❤️ by <a href="https://can-onal.com">Can Önal</a>
+</p>
+
+## About the Author
+
+This extension is developed by [Can Önal](https://can-onal.com), a software developer passionate about creating tools that enhance productivity and streamline workflows. Visit my website [can-onal.com](https://can-onal.com) to learn more about my other projects and professional experience.
+
 ## Features
 
 - 🔄 One-click save from LinkedIn to Notion
