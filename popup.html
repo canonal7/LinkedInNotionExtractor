@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LinkedIn to Notion</title>
+    <style>
+      body {
+        width: 400px;
+        padding: 15px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        padding: 10px;
+        background-color: #0a66c2;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #004182;
+      }
+      .status {
+        padding: 10px;
+        border-radius: 4px;
+        display: none;
+      }
+      .success {
+        background-color: #e6f4ea;
+        color: #137333;
+      }
+      .error {
+        background-color: #fce8e6;
+        color: #c5221f;
+      }
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 15px;
+      }
+      .tab {
+        padding: 8px 16px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: #666;
+      }
+      .tab.active {
+        color: #0a66c2;
+        border-bottom: 2px solid #0a66c2;
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      .preview-field {
+        margin-bottom: 10px;
+      }
+      .preview-field label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .preview-field .value {
+        color: #666;
+        word-break: break-word;
+      }
+      .preview-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <button class="tab active" data-tab="preview">Job Preview</button>
+        <button class="tab" data-tab="settings">Settings</button>
+      </div>
+
+      <div id="preview" class="tab-content active">
+        <div id="no-job-message" style="display: none">
+          Please navigate to a LinkedIn job posting
+        </div>
+        <div id="job-preview" style="display: none">
+          <div class="preview-field">
+            <label>Title:</label>
+            <div id="preview-title" class="value"></div>
+          </div>
+          <div class="preview-field">
+            <label>Company:</label>
+            <div id="preview-company" class="value"></div>
+          </div>
+          <div class="preview-field">
+            <label>Location:</label>
+            <div id="preview-location" class="value"></div>
+          </div>
+          <div class="preview-field">
+            <label>Employment Type:</label>
+            <div id="preview-employment-type" class="value"></div>
+          </div>
+          <div class="preview-field">
+            <label>Application Date:</label>
+            <div id="preview-application-date" class="value"></div>
+          </div>
+          <div class="preview-field">
+            <label>Notes:</label>
+            <textarea
+              id="preview-notes"
+              placeholder="Add any notes about this application..."
+              style="
+                width: 100%;
+                min-height: 80px;
+                margin-top: 5px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+              "
+            ></textarea>
+          </div>
+          <div class="preview-actions">
+            <button id="saveToNotion">Save to Notion</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="settings" class="tab-content">
+        <div class="input-group">
+          <label for="notionKey">Notion API Key:</label>
+          <input
+            type="password"
+            id="notionKey"
+            placeholder="Enter your Notion API key"
+          />
+        </div>
+        <div class="input-group">
+          <label for="databaseId">Notion Database ID:</label>
+          <input
+            type="text"
+            id="databaseId"
+            placeholder="Enter your database ID"
+          />
+        </div>
+        <button id="saveSettings">Save Settings</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

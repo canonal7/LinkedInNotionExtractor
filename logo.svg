@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="512" height="512" rx="80" fill="#0A66C2"/>
+  
+  <!-- Notion-style N -->
+  <path d="M128 152v208l64-64v-80l64 64v80l64-64V152h-64l-64 64-64-64z" fill="white"/>
+  
+  <!-- LinkedIn dots -->
+  <circle cx="384" cy="384" r="32" fill="white"/>
+  <circle cx="384" cy="288" r="32" fill="white"/>
+  
+  <!-- Connection line -->
+  <path d="M320 256c32-32 64-32 96-32" stroke="white" stroke-width="16" fill="none"/>
+</svg> 

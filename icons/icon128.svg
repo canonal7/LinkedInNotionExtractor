@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="128" height="128" rx="20" fill="#0A66C2"/>
+  
+  <!-- Notion-style N -->
+  <path d="M32 38v52l16-16V50l16 16v24l16-16V38H64L48 54 32 38z" fill="white"/>
+  
+  <!-- LinkedIn dots -->
+  <circle cx="96" cy="96" r="8" fill="white"/>
+  <circle cx="96" cy="72" r="8" fill="white"/>
+</svg> 
