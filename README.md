@@ -53,7 +53,35 @@ This extension is developed by [Can Önal](https://can-onal.com), a software dev
 6. Click "Submit" to create the integration
 7. Copy the "Internal Integration Token" (starts with `secret_`)
 
-### 2. Create and Prepare your Notion Database
+### 2. Create your Notion Database
+
+You have two options to set up your database:
+
+#### Option A: Use Our Template (Recommended)
+
+1. Visit our [Job Application Tracker Template](https://www.notion.so/169a5363dbba80119749f77cbf97becf?v=b9397c9e3a924444b193a4446ee44bb2&pvs=4)
+2. Click "Duplicate" in the top right corner
+3. Select the workspace where you want to copy the template
+4. The template includes:
+   - Pre-configured database structure
+   - Sample entries for reference
+   - Status options (Applied, Interview, Rejected, Offer)
+   - Helpful views (Kanban, Calendar, List)
+   - Tips for effective job tracking
+   - Ready-to-use property configurations
+   - Example job entries to guide you
+5. Share the duplicated database with your integration:
+   - Click "Share" in the top right
+   - Click "Add connections"
+   - Search for and select your integration name
+   - Click "Invite"
+6. Get your Database ID from the URL:
+   ```
+   https://notion.so/workspace/83jf72h3-example-id-here?v=...
+                           └─────── Database ID ───────┘
+   ```
+
+#### Option B: Create from Scratch
 
 1. Open Notion and create a new page
 2. Type `/database` and select "Table - Full page"
@@ -74,11 +102,7 @@ This extension is developed by [Can Önal](https://can-onal.com), a software dev
    - Click "Add connections"
    - Search for and select your integration name
    - Click "Invite"
-6. Get your Database ID from the URL:
-   ```
-   https://notion.so/workspace/83jf72h3-example-id-here?v=...
-                           └─────── Database ID ───────┘
-   ```
+6. Get your Database ID from the URL (as shown above)
 
 ### 3. Configure the Extension
 
